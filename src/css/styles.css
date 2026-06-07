@@ -1,18 +1,98 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+/* #region timer styles */
+/* region common */
+input[type='number'],
+input[type='text'] {
+  border-radius: 8px;
+  border: 1px solid #000;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  padding: 8px 16px;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+input[type='number']:disabled,
+input[type='text']:disabled {
+  background: #fafafa;
+  color: #808080;
+}
+/* endregion */
+
+.value {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2e2f42;
+  text-transform: uppercase;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timer-container {
+  max-width: 355px;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background-color: #4e75ff;
+}
+
+button:disabled {
+  color: #989898;
+  background-color: #cfcfcf;
+}
+
+/* #endregion timer styles */
+
+/* #region form styles */
+
+.form {
+  max-width: 360px;
+}
+
+.form label,
+.form legend {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.form > label > input {
+  display: block;
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 8px;
+  margin: 24px 0;
+}
+
+/* #endregion form styles */
