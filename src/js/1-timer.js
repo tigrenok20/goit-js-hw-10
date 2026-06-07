@@ -52,7 +52,9 @@ function addLeadingZero(value) {
 }
 
 function updateDisplay() {
-  const values = convertMs(userSelectedDate.getTime() - Date.now());
+  const values = convertMs(
+    userSelectedDate ? userSelectedDate.getTime() - Date.now() : 0
+  );
   daysElement.textContent = addLeadingZero(String(values.days));
   hoursElement.textContent = addLeadingZero(String(values.hours));
   minutesElement.textContent = addLeadingZero(String(values.minutes));
@@ -67,9 +69,10 @@ startButton.addEventListener('click', () => {
       if (isLessOrEqualNow()) {
         clearInterval(interval);
         datetimePicker.disabled = false;
-      } else {
-        updateDisplay();
+        userSelectedDate = undefined;
       }
+
+      updateDisplay();
     }, 1000);
   }
 });
